@@ -8,12 +8,12 @@ const removeKdm = async (req, res) => {
   if (!result) {
     throw HttpError(404, "Not Found");
   }
-
+  const response = await Kdm.find();
   res.status(200);
   res.json({
     code: 200,
     message: "Kdm deleted",
-    data: result,
+    data: response,
   });
 };
 

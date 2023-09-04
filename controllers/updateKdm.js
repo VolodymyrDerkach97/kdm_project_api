@@ -10,11 +10,13 @@ const updateKdm = async (req, res) => {
   if (!result) {
     throw HttpError(404, "Not Found");
   }
+  const response = await Kdm.find();
+
   res.status(200);
   res.json({
     code: 200,
     message: "Update kdm ",
-    data: result,
+    data: response,
   });
 };
 
