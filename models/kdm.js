@@ -15,6 +15,10 @@ const kdmSchema = Schema(
       type: String,
       required: [true, "Set timeEnd for kdm"],
     },
+    hall: {
+      type: String,
+      required: [true, "Set hall for kdm"],
+    },
   },
   { versionKey: false, timestamps: true }
 );
@@ -29,11 +33,13 @@ const addSchema = Joi.object({
   name: Joi.string().required(),
   timeStart: Joi.string().required(),
   timeEnd: Joi.string().required(),
+  hall: Joi.string().required(),
 });
 const updateSchema = Joi.object({
   name: Joi.string(),
   timeStart: Joi.string(),
   timeEnd: Joi.string(),
+  hall: Joi.string(),
 });
 
 const schemas = {
