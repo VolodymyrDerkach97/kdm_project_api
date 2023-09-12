@@ -20,12 +20,14 @@ app.use("/api/user", userRouter);
 app.use("/api/kdm", kdmRouter);
 
 app.use((req, res) => {
-  res.status(404).json({ message: "Not found" });
+  res.status(404);
+  res.json({ message: "Not found" });
 });
 
 app.use((err, req, res, next) => {
   console.log("err.stack---<>", err.stack);
-  res.status(err.status).json({
+  res.status(err.status);
+  res.json({
     code: err.status,
     message: err.message,
   });

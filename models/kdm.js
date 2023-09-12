@@ -6,6 +6,7 @@ const kdmSchema = Schema(
     name: {
       type: String,
       required: [true, "Set name for kdm"],
+      unique: [true, "The name must be unique"],
     },
     timeStart: {
       type: String,
